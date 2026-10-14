@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Slow Miles Club — Start Running Without the Rush (30-Day Guide)</title>
+  
+  <!-- Premium Human Editorial Fonts: Newsreader (Serif) & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Canvas Confetti -->
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['Newsreader', 'Georgia', 'serif'],
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+          },
+          colors: {
+            paper: '#FDFBF7',
+            canvas: '#F7F4EE',
+            ink: '#1F2421',
+            muted: '#5B6258',
+            forest: {
+              DEFAULT: '#1E3F33',
+              dark: '#142B23',
+              light: '#EBF2EE',
+            },
+            terracotta: {
+              DEFAULT: '#D85A38',
+              hover: '#C24A2A',
+              light: '#FBF0EB',
+            },
+            warmborder: '#E8E2D8',
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FDFBF7;
+      color: #1F2421;
+    }
+    ::selection {
+      background-color: #D85A38;
+      color: white;
+    }
+    .paper-card {
+      background-color: #FFFFFF;
+      border: 1px solid #E8E2D8;
+      box-shadow: 0 4px 20px -2px rgba(31, 36, 33, 0.04);
+    }
+    /* Print optimizations */
+    @media print {
+      .no-print { display: none !important; }
+      body { background: white !important; color: #111 !important; font-size: 11pt; }
+      .paper-card { border: 1px solid #ccc !important; box-shadow: none !important; }
+      .print-break { break-inside: avoid; }
+    }
+  </style>
+</head>
+<body class="font-sans antialiased text-ink">
+
+  <!-- Editorial Top Bar -->
+  <div class="bg-forest text-white text-xs py-2.5 px-4 text-center font-medium border-b border-forest-dark">
+    <div class="max-w-6xl mx-auto flex items-center justify-center gap-3">
+      <span class="inline-block w-2 h-2 rounded-full bg-emerald-400"></span>
+      <span><strong>Next beginner group starts Monday.</strong> 100% free. 20 minutes a day, 3 days a week.</span>
+      <a href="#signup" class="underline hover:text-terracotta-light hidden sm:inline ml-2 text-white/90">Join the group &rarr;</a>
+    </div>
+  </div>
+
+  <!-- Navigation -->
+  <header class="border-b border-warmborder bg-paper/90 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 h-20 flex items-center justify-between">
+      
+      <!-- Brand Logo (Sophisticated Runner Icon & Typography) -->
+      <a href="#" class="flex items-center gap-3.5 group">
+        <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-forest to-forest-dark text-emerald-300 flex items-center justify-center shadow-sm border border-emerald-900/30 group-hover:scale-105 transition-all duration-200">
+          <!-- Athletic Continuous Runner Stride Mark -->
+          <svg class="w-5 h-5 text-emerald-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="15.5" cy="5" r="2.2" fill="currentColor"/>
+            <path d="M13.5 9.5l-3 4.5-4-1 2.5 7" />
+            <path d="M13.5 9.5l3.5 3 4-1.5" />
+            <path d="M8.5 13l2.5-3.5 4.5 1" />
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-serif text-xl font-bold tracking-tight text-forest-dark group-hover:text-forest transition-colors">Slow Miles Club</span>
+          <span class="text-[11px] text-muted font-medium -mt-0.5 italic">Running, without the rush.</span>
+        </div>
+      </a>
+
+      <!-- Menu Links -->
+      <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-muted">
+        <a href="#how-it-works" class="hover:text-ink transition-colors">How It Works</a>
+        <a href="#roadmap" class="hover:text-ink transition-colors">The 4 Weeks</a>
+        <a href="#audio-preview" class="hover:text-ink transition-colors">Listen to Day 1</a>
+        <a href="#stories" class="hover:text-ink transition-colors">Stories</a>
+        <a href="#faq" class="hover:text-ink transition-colors">FAQ</a>
+      </nav>
+
+      <!-- Action Button -->
+      <div>
+        <a href="#signup" class="px-5 py-2.5 rounded-full text-xs font-bold bg-forest text-white hover:bg-forest-dark transition-all duration-150 shadow-sm hover:shadow">
+          Get Week 1 Free
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO SECTION -->
+    <section class="pt-14 pb-16 sm:pt-20 sm:pb-24 border-b border-warmborder">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+        
+        <!-- Human Tag -->
+        <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-canvas border border-warmborder text-xs font-medium text-muted mb-6">
+          <span class="text-terracotta font-serif italic font-semibold">Zero-Ego Running</span>
+          <span class="text-warmborder">|</span>
+          <span>14,200+ ordinary people started here</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="font-serif text-4xl sm:text-6xl text-ink tracking-tight leading-[1.12] mb-6 font-normal">
+          You don't have to be a runner to start.
+          <span class="block italic text-forest font-medium mt-1">Just give us 20 minutes, 3 days a week.</span>
+        </h1>
+
+        <!-- Subheadline -->
+        <p class="text-base sm:text-lg text-muted leading-relaxed mb-10 max-w-2xl mx-auto">
+          A gentle walk-to-run plan built for people who get winded running for a bus, worry about sore knees, or feel awkward running in public. No timers to watch&mdash;just a calm voice in your earbuds telling you exactly when to walk and when to jog.
+        </p>
+
+        <!-- Frictionless Signup Card -->
+        <div class="paper-card p-4 sm:p-5 rounded-2xl max-w-xl mx-auto mb-6 text-left border border-warmborder">
+          <form onsubmit="handleSignup(event, 'hero-email')" class="flex flex-col sm:flex-row gap-2.5">
+            <input 
+              type="email" 
+              id="hero-email" 
+              required 
+              aria-label="Email address"
+              placeholder="Enter your email address..." 
+              class="flex-1 px-4 py-3 text-sm rounded-xl bg-canvas border border-warmborder focus:outline-none focus:border-forest text-ink placeholder-muted/70"
+            />
+            <button 
+              type="submit" 
+              class="px-6 py-3 rounded-xl font-bold text-sm bg-terracotta hover:bg-terracotta-hover text-white transition-all shadow-sm flex items-center justify-center gap-2 whitespace-nowrap active:scale-[0.98]"
+            >
+              <span>Send Me Week 1</span>
+              <span>&rarr;</span>
+            </button>
+          </form>
+          <p class="text-[11px] text-muted mt-2.5 flex items-center gap-1.5 px-1">
+            <svg class="w-3.5 h-3.5 text-forest" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7" /></svg>
+            <span>100% Free &bull; Week 1 audio guide + printable fridge tracker &bull; No credit card</span>
+          </p>
+        </div>
+
+        <!-- Real Human Reassurance Badges -->
+        <div class="flex flex-wrap items-center justify-center gap-y-2 gap-x-6 text-xs text-muted pt-2">
+          <span class="flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-forest" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+            Walk whenever you need
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-forest" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+            Works with everyday sneakers
+          </span>
+          <span class="flex items-center gap-1.5">
+            <svg class="w-3.5 h-3.5 text-forest" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+            No pace requirements
+          </span>
+        </div>
+
+
+        <!-- Hero Photo -->
+        <div class="mt-12 max-w-sm mx-auto">
+          <img src="https://i.ibb.co/KpHXLFSK/gv-P-j8f-Ddm2-Rbo-LXq-SJn5g-Ik51-Svv-Oc5d-YXKm3-Vg-Wfee-HCus-I4-Ddq8qhpb-GD4v-R41l-SR2-Xu-Zeg-EUYU8-MUp-T.jpg" alt="A beginner walk-jogging outdoors at an easy pace" width="1024" height="1536" class="w-full h-auto rounded-3xl border border-warmborder shadow-lg object-cover" style="max-height:560px">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 1: THE REAL PROBLEM / WHY PAST ATTEMPTS FAILED -->
+    <section id="how-it-works" class="py-16 sm:py-20 bg-canvas border-b border-warmborder">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <p class="text-xs uppercase tracking-widest text-terracotta font-bold mb-2">The Real Truth</p>
+          <h2 class="font-serif text-3xl sm:text-4xl text-ink font-normal">
+            Why running feels awful when you start on your own
+          </h2>
+          <p class="text-muted text-sm sm:text-base mt-3">
+            If you've tried running in the past and quit after three days, it wasn't your body's fault.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Box 1 -->
+          <div class="paper-card p-6 rounded-2xl border border-warmborder">
+            <div class="w-10 h-10 rounded-full bg-forest-light text-forest flex items-center justify-center font-serif font-bold text-lg mb-4">
+              1
+            </div>
+            <h3 class="font-serif font-bold text-lg text-ink mb-2">You ran way too fast</h3>
+            <p class="text-xs sm:text-sm text-muted leading-relaxed">
+              Most people step out their front door and sprint at their high school PE speed. Within 90 seconds your chest is on fire, your throat burns, and you tell yourself: <em>"I'm just not built for this."</em>
+            </p>
+          </div>
+
+          <!-- Box 2 -->
+          <div class="paper-card p-6 rounded-2xl border border-warmborder">
+            <div class="w-10 h-10 rounded-full bg-forest-light text-forest flex items-center justify-center font-serif font-bold text-lg mb-4">
+              2
+            </div>
+            <h3 class="font-serif font-bold text-lg text-ink mb-2">Your ego wouldn't let you walk</h3>
+            <p class="text-xs sm:text-sm text-muted leading-relaxed">
+              We've been taught that walking is "cheating." In reality, walking intervals are how Olympic coaches train athletes: they let your heart recover so you build endurance without burning out.
+            </p>
+          </div>
+
+          <!-- Box 3 -->
+          <div class="paper-card p-6 rounded-2xl border border-warmborder">
+            <div class="w-10 h-10 rounded-full bg-forest-light text-forest flex items-center justify-center font-serif font-bold text-lg mb-4">
+              3
+            </div>
+            <h3 class="font-serif font-bold text-lg text-ink mb-2">You ran on consecutive days</h3>
+            <p class="text-xs sm:text-sm text-muted leading-relaxed">
+              Muscles adapt in days; knee tendons and shin bones need 48 hours to rebuild. Trying to run every day without rest causes stiffness and joint pain, knocking you out for weeks.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- The Warm Takeaway Note -->
+        <div class="mt-10 p-6 rounded-2xl bg-paper border border-warmborder text-center max-w-2xl mx-auto">
+          <p class="font-serif italic text-lg sm:text-xl text-forest-dark">
+            "Running is not a punishment for eating cake. It is simply a gentle conversation between your feet and the ground."
+          </p>
+          <p class="text-xs text-muted mt-2">&mdash; Slow Miles Club Philosophy</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 2: INTERACTIVE ROADMAP SLIDER (Curiosity -> Understanding) -->
+    <section id="roadmap" class="py-16 sm:py-24 border-b border-warmborder">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <p class="text-xs uppercase tracking-widest text-terracotta font-bold mb-2">Step By Step</p>
+          <h2 class="font-serif text-3xl sm:text-4xl text-ink font-normal">
+            What your next 30 days actually look like
+          </h2>
+          <p class="text-muted text-sm sm:text-base mt-3">
+            Click through the weeks to see how the intervals expand gently over 30 days.
+          </p>
+        </div>
+
+        <!-- Roadmap Image -->
+        <div class="max-w-3xl mx-auto mb-10">
+          <img src="https://i.ibb.co/CpQTJLPm/Screenshot-2026-10-14-162740.png" alt="Your 30-day walk-to-run roadmap" width="1042" height="694" loading="lazy" class="w-full h-auto rounded-2xl border border-warmborder shadow-md">
+        </div>
+
+        <!-- Interactive Week Selector Tabs -->
+        <div class="flex items-center justify-center gap-2 mb-8 overflow-x-auto pb-2">
+          <button onclick="selectWeek(1, this)" class="week-tab px-5 py-2.5 rounded-full text-xs font-bold bg-forest text-white transition-all shadow-sm">
+            Week 1: The First Step
+          </button>
+          <button onclick="selectWeek(2, this)" class="week-tab px-5 py-2.5 rounded-full text-xs font-bold bg-canvas text-muted hover:text-ink border border-warmborder transition-all">
+            Week 2: Finding Your Pace
+          </button>
+          <button onclick="selectWeek(3, this)" class="week-tab px-5 py-2.5 rounded-full text-xs font-bold bg-canvas text-muted hover:text-ink border border-warmborder transition-all">
+            Week 3: The Breakthrough
+          </button>
+          <button onclick="selectWeek(4, this)" class="week-tab px-5 py-2.5 rounded-full text-xs font-bold bg-canvas text-muted hover:text-ink border border-warmborder transition-all">
+            Week 4: 20 Minutes Non-Stop
+          </button>
+        </div>
+
+        <!-- The Selected Week Presentation Card -->
+        <div id="week-display-card" class="paper-card rounded-2xl p-6 sm:p-8 border border-warmborder transition-all duration-200">
+          <!-- Populated by Javascript -->
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 3: TASTEFUL AUDIO COACH PREVIEW -->
+    <section id="audio-preview" class="py-16 sm:py-20 bg-canvas border-b border-warmborder">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6 text-center">
+        
+        <p class="text-xs uppercase tracking-widest text-terracotta font-bold mb-2">Put Your Phone in Your Pocket</p>
+        <h2 class="font-serif text-3xl sm:text-4xl text-ink font-normal">
+          No staring at timers. Just a friendly voice in your ear.
+        </h2>
+        <p class="text-muted text-sm sm:text-base max-w-xl mx-auto mt-3 mb-10">
+          When you're out there, you shouldn't be squinting at a phone screen. Press play below to hear what your coach sounds like during your Day 1 run:
+        </p>
+
+        <!-- Tactile Audio Player Component -->
+        <div class="paper-card rounded-2xl p-6 sm:p-7 max-w-lg mx-auto text-left border border-warmborder shadow-sm">
+          
+          <div class="flex items-center gap-4 mb-5">
+            <button onclick="toggleAudioPreview()" id="audio-play-button" aria-label="Play audio sample" class="w-13 h-13 sm:w-14 sm:h-14 rounded-full bg-forest text-white flex items-center justify-center hover:bg-forest-dark transition-all flex-shrink-0 shadow-sm active:scale-95">
+              <svg id="audio-play-icon" class="w-6 h-6 ml-0.5" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            </button>
+            <div>
+              <span class="text-[11px] uppercase tracking-wider text-terracotta font-bold">Audio Clip Excerpt</span>
+              <h4 class="font-serif font-bold text-lg text-ink">Day 1: "The Conversational Jog"</h4>
+              <p class="text-xs text-muted">Coach Sarah &bull; 20 seconds preview</p>
+            </div>
+          </div>
+
+          <!-- Progress Bar & Sound Indicator -->
+          <div class="mb-4">
+            <div class="h-2 rounded-full bg-canvas border border-warmborder overflow-hidden">
+              <div id="audio-progress" class="h-full bg-terracotta w-0 transition-all duration-300"></div>
+            </div>
+            <div class="flex justify-between text-[11px] text-muted font-mono mt-1.5">
+              <span id="audio-timer">00:00</span>
+              <span>00:20</span>
+            </div>
+          </div>
+
+          <!-- Live Transcript Quote Box -->
+          <div class="p-3.5 rounded-xl bg-canvas border border-warmborder text-xs sm:text-sm text-ink leading-relaxed italic">
+            <span class="text-muted not-italic font-bold block text-[10px] uppercase mb-1">Transcript:</span>
+            <p id="audio-transcript-text">
+              "Press play and start with a relaxing 3-minute warm-up walk..."
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 4: WHAT COMES IN YOUR EMAIL -->
+    <section class="py-16 sm:py-20 border-b border-warmborder">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <p class="text-xs uppercase tracking-widest text-terracotta font-bold mb-2">Everything You Need</p>
+          <h2 class="font-serif text-3xl sm:text-4xl text-ink font-normal">
+            What you actually get when you join
+          </h2>
+          <p class="text-muted text-sm sm:text-base mt-3">
+            Simple tools designed to remove every bit of friction between you and your running shoes.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          
+          <!-- Item 1: Audio -->
+          <div class="paper-card p-6 rounded-2xl border border-warmborder flex gap-4">
+            <div class="w-11 h-11 rounded-xl bg-terracotta-light text-terracotta flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M15.536 8.464a5 5 0 010 7.072m2.828-9.9a9 9 0 010 12.728M5.586 15H4a1 1 0 01-1-1v-4a1 1 0 011-1h1.586l4.707-4.707C10.923 3.663 12 4.109 12 5v14c0 .891-1.077 1.337-1.707.707L5.586 15z" /></svg>
+            </div>
+            <div>
+              <h3 class="font-serif font-bold text-lg text-ink mb-1">Guided Audio Runs</h3>
+              <p class="text-xs sm:text-sm text-muted leading-relaxed">
+                Downloadable audio files for each week. Play them over your favorite Spotify playlist or podcast. We chime in gently when it's time to switch.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 2: Calendar -->
+          <div class="paper-card p-6 rounded-2xl border border-warmborder flex gap-4">
+            <div class="w-11 h-11 rounded-xl bg-forest-light text-forest flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
+            </div>
+            <div>
+              <h3 class="font-serif font-bold text-lg text-ink mb-1">Printable Fridge Calendar</h3>
+              <p class="text-xs sm:text-sm text-muted leading-relaxed">
+                A clean, satisfying one-page PDF you can stick on your refrigerator with a magnet. Crossing off each day with a pen feels incredible.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 3: Warmup -->
+          <div class="paper-card p-6 rounded-2xl border border-warmborder flex gap-4">
+            <div class="w-11 h-11 rounded-xl bg-canvas text-ink flex items-center justify-center flex-shrink-0 border border-warmborder">
+              <svg class="w-5 h-5 text-forest" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" /></svg>
+            </div>
+            <div>
+              <h3 class="font-serif font-bold text-lg text-ink mb-1">5-Minute Warmup Cheat Sheet</h3>
+              <p class="text-xs sm:text-sm text-muted leading-relaxed">
+                3 simple movements to do before you leave the house to warm up your calves and knees. Eliminates shin splints before they start.
+              </p>
+            </div>
+          </div>
+
+          <!-- Item 4: Community -->
+          <div class="paper-card p-6 rounded-2xl border border-warmborder flex gap-4">
+            <div class="w-11 h-11 rounded-xl bg-forest-light text-forest flex items-center justify-center flex-shrink-0">
+              <svg class="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>
+            </div>
+            <div>
+              <h3 class="font-serif font-bold text-lg text-ink mb-1">Beginner-Only Community</h3>
+              <p class="text-xs sm:text-sm text-muted leading-relaxed">
+                A private, supportive group where you can share sweaty post-run walks and ask questions without anyone bragging about marathon times.
+              </p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 5: REAL HUMAN STORIES -->
+    <section id="stories" class="py-16 sm:py-20 bg-canvas border-b border-warmborder">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <p class="text-xs uppercase tracking-widest text-terracotta font-bold mb-2">Graduates</p>
+          <h2 class="font-serif text-3xl sm:text-4xl text-ink font-normal">
+            People who thought they "weren't built for running"
+          </h2>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Story 1 -->
+          <div class="paper-card p-6 rounded-2xl border border-warmborder flex flex-col justify-between">
+            <div>
+              <p class="font-serif italic text-sm text-ink leading-relaxed mb-4">
+                "I hadn't run in 14 years. Week 1 felt so gentle I thought it was a trick. But by Day 20, I was running for 5 minutes straight without gasping for breath. Last Sunday, I completed my 20-minute run. My kids couldn't believe it."
+              </p>
+            </div>
+            <div class="pt-4 border-t border-warmborder flex items-center gap-3">
+              <img src="https://i.ibb.co/355TbQSv/Screenshot-2026-10-14-161830.png" alt="David Kumar" loading="lazy" class="w-11 h-11 rounded-full object-cover object-top border border-warmborder shrink-0">
+              <div>
+                <p class="text-xs font-bold text-ink">David Kumar, 41</p>
+                <p class="text-[11px] text-muted">Accountant & Father</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story 2 -->
+          <div class="paper-card p-6 rounded-2xl border border-warmborder flex flex-col justify-between">
+            <div>
+              <p class="font-serif italic text-sm text-ink leading-relaxed mb-4">
+                "My biggest barrier was feeling embarrassed. I was so worried about what neighbors would think if they saw me jogging slow. The coach said: 'You are lapping everyone sitting on the couch.' That changed everything for me."
+              </p>
+            </div>
+            <div class="pt-4 border-t border-warmborder flex items-center gap-3">
+              <img src="https://i.ibb.co/fYLtgDXJ/Screenshot-2026-10-14-161840.png" alt="Maya Rodriguez" loading="lazy" class="w-11 h-11 rounded-full object-cover object-top border border-warmborder shrink-0">
+              <div>
+                <p class="text-xs font-bold text-ink">Maya Rodriguez, 33</p>
+                <p class="text-[11px] text-muted">Middle School Teacher</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Story 3 -->
+          <div class="paper-card p-6 rounded-2xl border border-warmborder flex flex-col justify-between">
+            <div>
+              <p class="font-serif italic text-sm text-ink leading-relaxed mb-4">
+                "I used to get shin splints after two runs every time I tried Couch-to-5K. Stride's rule of 3 alternating days a week gave my legs time to heal. No knee pain, no shin splints. Best fitness decision I made this year."
+              </p>
+            </div>
+            <div class="pt-4 border-t border-warmborder flex items-center gap-3">
+              <img src="https://i.ibb.co/v6pwQnc6/Screenshot-2026-10-14-161905.png" alt="Sam Patel" loading="lazy" class="w-11 h-11 rounded-full object-cover object-top border border-warmborder shrink-0">
+              <div>
+                <p class="text-xs font-bold text-ink">Sam Patel, 29</p>
+                <p class="text-[11px] text-muted">Graphic Designer</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 6: FAQ ACCORDION -->
+    <section id="faq" class="py-16 sm:py-20 border-b border-warmborder">
+      <div class="max-w-3xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center mb-12">
+          <p class="text-xs uppercase tracking-widest text-terracotta font-bold mb-2">Common Hesitations</p>
+          <h2 class="font-serif text-3xl sm:text-4xl text-ink font-normal">
+            Frequently Asked Questions
+          </h2>
+        </div>
+
+        <div class="space-y-3">
+          
+          <div class="paper-card rounded-xl border border-warmborder overflow-hidden">
+            <button onclick="toggleFaq(this)" class="w-full px-5 py-4 text-left font-serif font-bold text-base sm:text-lg text-ink flex justify-between items-center">
+              <span>What if I can't even run for 60 seconds right now?</span>
+              <span class="text-muted text-lg font-mono font-normal ml-3">+</span>
+            </button>
+            <div class="px-5 pb-4 text-xs sm:text-sm text-muted leading-relaxed hidden border-t border-warmborder pt-3 bg-canvas/40">
+              That is completely okay and very normal. Week 1 includes an optional "walking ramp" where you jog for just 30 seconds and walk for 2 minutes. You progress at your own body's speed.
+            </div>
+          </div>
+
+          <div class="paper-card rounded-xl border border-warmborder overflow-hidden">
+            <button onclick="toggleFaq(this)" class="w-full px-5 py-4 text-left font-serif font-bold text-base sm:text-lg text-ink flex justify-between items-center">
+              <span>Will this hurt my knees or back?</span>
+              <span class="text-muted text-lg font-mono font-normal ml-3">+</span>
+            </button>
+            <div class="px-5 pb-4 text-xs sm:text-sm text-muted leading-relaxed hidden border-t border-warmborder pt-3 bg-canvas/40">
+              Most knee pain comes from trying to run too fast and landing heavily with a straight leg. Our audio coaching reminds you to take short, soft steps. Plus, by running only 3 days a week, your joints have 48 full hours to recover and strengthen.
+            </div>
+          </div>
+
+          <div class="paper-card rounded-xl border border-warmborder overflow-hidden">
+            <button onclick="toggleFaq(this)" class="w-full px-5 py-4 text-left font-serif font-bold text-base sm:text-lg text-ink flex justify-between items-center">
+              <span>Do I need to buy special running shoes?</span>
+              <span class="text-muted text-lg font-mono font-normal ml-3">+</span>
+            </button>
+            <div class="px-5 pb-4 text-xs sm:text-sm text-muted leading-relaxed hidden border-t border-warmborder pt-3 bg-canvas/40">
+              No. Any comfortable sneakers or trainers in your closet are completely fine for your first 30 days. Don't spend $150 on shoes until you've finished the month and know you love it.
+            </div>
+          </div>
+
+          <div class="paper-card rounded-xl border border-warmborder overflow-hidden">
+            <button onclick="toggleFaq(this)" class="w-full px-5 py-4 text-left font-serif font-bold text-base sm:text-lg text-ink flex justify-between items-center">
+              <span>What if I miss a scheduled day?</span>
+              <span class="text-muted text-lg font-mono font-normal ml-3">+</span>
+            </button>
+            <div class="px-5 pb-4 text-xs sm:text-sm text-muted leading-relaxed hidden border-t border-warmborder pt-3 bg-canvas/40">
+              Life happens. If you miss Wednesday, just do it Thursday. There are no streaks to lose, no penalties, and no guilt. Consistency over months matters far more than an unbroken week.
+            </div>
+          </div>
+
+          <div class="paper-card rounded-xl border border-warmborder overflow-hidden">
+            <button onclick="toggleFaq(this)" class="w-full px-5 py-4 text-left font-serif font-bold text-base sm:text-lg text-ink flex justify-between items-center">
+              <span>Why is it free? What's the catch?</span>
+              <span class="text-muted text-lg font-mono font-normal ml-3">+</span>
+            </button>
+            <div class="px-5 pb-4 text-xs sm:text-sm text-muted leading-relaxed hidden border-t border-warmborder pt-3 bg-canvas/40">
+              The 30-Day beginner program is 100% free. We also run ongoing community groups and longer training programs (like 10K and Half-Marathon clubs) for people who graduate and want to continue. That's how we keep the beginner club free for everyone.
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECTION 7: FINAL CONVERSION SECTION -->
+    <section id="signup" class="py-16 sm:py-24 bg-forest text-white">
+      <div class="max-w-2xl mx-auto px-4 sm:px-6 text-center">
+        
+        <span class="inline-block px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-white/10 text-emerald-200 border border-white/10 mb-4">
+          Start This Monday
+        </span>
+        <h2 class="font-serif text-3xl sm:text-5xl font-normal leading-tight mb-4">
+          In 30 days, you'll either wish you started today...<br>or be 20 continuous minutes into your run.
+        </h2>
+        <p class="text-white/80 text-sm sm:text-base max-w-lg mx-auto mb-10 leading-relaxed">
+          No timers. No expensive gear. Just 20 minutes, 3 days a week, and a community cheering you on.
+        </p>
+
+        <!-- The Warm Sign-up Card -->
+        <div class="bg-paper text-ink p-6 sm:p-8 rounded-2xl text-left border border-warmborder shadow-xl">
+          <h3 class="font-serif font-bold text-xl text-forest-dark mb-1">Get Your Free 30-Day Plan</h3>
+          <p class="text-xs text-muted mb-5">We'll immediately send your Week 1 audio file and printable calendar.</p>
+
+          <form onsubmit="handleSignup(event, 'final-email', 'final-name')" class="space-y-3.5">
+            <div>
+              <label for="final-name" class="block text-xs font-bold text-ink uppercase tracking-wider mb-1">First Name</label>
+              <input 
+                type="text" 
+                id="final-name" 
+                required 
+                placeholder="e.g. Maya" 
+                class="w-full px-4 py-2.5 rounded-xl bg-canvas border border-warmborder text-sm focus:outline-none focus:border-forest text-ink"
+              />
+            </div>
+            <div>
+              <label for="final-email" class="block text-xs font-bold text-ink uppercase tracking-wider mb-1">Email Address</label>
+              <input 
+                type="email" 
+                id="final-email" 
+                required 
+                placeholder="maya@example.com" 
+                class="w-full px-4 py-2.5 rounded-xl bg-canvas border border-warmborder text-sm focus:outline-none focus:border-forest text-ink"
+              />
+            </div>
+            <div>
+              <label for="start-day" class="block text-xs font-bold text-ink uppercase tracking-wider mb-1">When would you like to start?</label>
+              <select id="start-day" class="w-full px-4 py-2.5 rounded-xl bg-canvas border border-warmborder text-sm focus:outline-none focus:border-forest text-ink">
+                <option value="monday">This Monday (with the new beginner cohort)</option>
+                <option value="tomorrow">Tomorrow morning (solo jumpstart)</option>
+                <option value="weekend">This upcoming Saturday</option>
+              </select>
+            </div>
+
+            <button 
+              type="submit" 
+              class="w-full py-3.5 px-6 rounded-xl font-bold text-sm bg-terracotta hover:bg-terracotta-hover text-white transition-all shadow-sm flex items-center justify-center gap-2 mt-4 active:scale-[0.98]"
+            >
+              <span>Send Me Week 1 Free</span>
+              <span>&rarr;</span>
+            </button>
+          </form>
+
+          <div class="mt-4 pt-3 border-t border-warmborder flex items-center justify-between text-[11px] text-muted">
+            <span class="flex items-center gap-1">
+              <svg class="w-3.5 h-3.5 text-forest" fill="none" viewBox="0 0 24 24" stroke="currentColor"><rect x="3" y="11" width="18" height="11" rx="2" ry="2" /><path d="M7 11V7a5 5 0 0110 0v4" /></svg>
+              No spam, ever
+            </span>
+            <span class="flex items-center gap-1">
+              <svg class="w-3.5 h-3.5 text-forest" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" /></svg>
+              Instant download
+            </span>
+            <span class="flex items-center gap-1">
+              <svg class="w-3.5 h-3.5 text-forest" fill="none" viewBox="0 0 24 24" stroke="currentColor"><circle cx="12" cy="12" r="10"/><line x1="4.93" y1="4.93" x2="19.07" y2="19.07"/></svg>
+              1-click unsubscribe
+            </span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Success Modal with Confetti -->
+  <div id="success-modal" class="fixed inset-0 bg-ink/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden">
+    <div class="paper-card rounded-2xl max-w-md w-full p-6 sm:p-8 text-center border border-warmborder shadow-2xl">
+      <div class="w-14 h-14 rounded-full bg-forest-light text-forest flex items-center justify-center mx-auto mb-4">
+        <svg class="w-7 h-7" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5"><path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" /></svg>
+      </div>
+      <h3 class="font-serif font-bold text-2xl text-ink mb-2">Welcome to the Club!</h3>
+      <p class="text-xs sm:text-sm text-muted mb-6 leading-relaxed">
+        We just emailed your <strong>Week 1 Audio Track</strong> and printable <strong>Fridge Calendar</strong> to <span id="confirmed-email" class="font-bold text-ink">your email</span>.
+      </p>
+      <div class="bg-canvas rounded-xl p-4 text-left text-xs text-muted mb-6 space-y-1.5 border border-warmborder">
+        <p class="font-bold text-ink">Next Steps:</p>
+        <p>1. Check your inbox for your welcome email.</p>
+        <p>2. Put your walking sneakers near the door for Monday morning.</p>
+        <p>3. Remember: walk as much as you need. There is no rush.</p>
+      </div>
+      <button onclick="closeModal()" class="w-full py-3 px-4 rounded-xl font-bold text-xs bg-forest text-white hover:bg-forest-dark transition-all">
+        Can't wait to start!
+      </button>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="bg-paper border-t border-warmborder py-10 text-xs text-muted">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div class="flex items-center gap-2.5">
+        <div class="w-7 h-7 rounded-lg bg-forest text-emerald-300 flex items-center justify-center shadow-sm">
+          <svg class="w-4 h-4 text-emerald-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="15.5" cy="5" r="2.2" fill="currentColor"/>
+            <path d="M13.5 9.5l-3 4.5-4-1 2.5 7" />
+          </svg>
+        </div>
+        <p class="font-serif font-bold text-sm text-ink">Slow Miles Club</p>
+      </div>
+      <p class="text-center sm:text-right text-[11px] text-muted">
+        &copy; 2026 Slow Miles Club. Health Note: Always consult a physician before beginning any new exercise routine.
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts for Interactive Controls -->
+  <script>
+    // 1. Interactive 4-Week Progression Roadmap Data
+    const weekData = {
+      1: {
+        title: "Week 1: Waking Up the Engine",
+        subtitle: "3 days • 18 minutes each",
+        breakdown: [
+          { time: "3 mins", label: "Warm-up Walk", desc: "Easy, relaxed pace to wake up feet and ankles." },
+          { time: "Repeat 6x", label: "60s Gentle Jog + 90s Walk", desc: "Jog so slow that someone briskly walking could keep up. Zero gasping." },
+          { time: "3 mins", label: "Cooldown Walk", desc: "Catch your breath and finish with energy to spare." }
+        ],
+        tip: "Coach Tip: If you feel self-conscious jogging slowly, remember that professional runners do 80% of their mileage at this exact easy conversational pace."
+      },
+      2: {
+        title: "Week 2: Finding Your Conversational Pace",
+        subtitle: "3 days • 20 minutes each",
+        breakdown: [
+          { time: "3 mins", label: "Warm-up Walk", desc: "Light stride and relaxed shoulders." },
+          { time: "Repeat 6x", label: "90s Relaxed Jog + 60s Walk", desc: "Notice how your breathing settles into an easy rhythm." },
+          { time: "2 mins", label: "Cooldown Walk", desc: "Feel the calm post-run endorphin boost." }
+        ],
+        tip: "Coach Tip: The 'Talk Test'—you should be able to say your favorite pizza toppings out loud without gasping. If you can't, slow down 10%."
+      },
+      3: {
+        title: "Week 3: The 5-Minute Breakthrough",
+        subtitle: "3 days • 22 minutes each",
+        breakdown: [
+          { time: "3 mins", label: "Warm-up Walk", desc: "Knees feeling light and primed." },
+          { time: "Repeat 3x", label: "3 to 5 min Continuous Jog + 90s Walk", desc: "You'll run for 5 full minutes without stopping and realize you aren't tired." },
+          { time: "3 mins", label: "Cooldown Walk", desc: "Joints and shins are adapted and strong." }
+        ],
+        tip: "Coach Tip: Your connective tissue has now adapted. The fear of getting winded is officially in your rearview mirror."
+      },
+      4: {
+        title: "Week 4: The 20-Minute Graduation Run",
+        subtitle: "The Final Milestone",
+        breakdown: [
+          { time: "3 mins", label: "Warm-up Walk", desc: "Pre-run excitement and deep breaths." },
+          { time: "Milestone", label: "20 Continuous Minutes Jogging", desc: "Pop in the celebratory graduation track and run smoothly without stopping." },
+          { time: "Finish!", label: "Celebrate & Cool Down", desc: "Cross off Day 30 on your fridge calendar. You did it." }
+        ],
+        tip: "Coach Tip: You are no longer someone who 'wants to run.' You are a runner."
+      }
+    };
+
+    function selectWeek(num, button) {
+      document.querySelectorAll('.week-tab').forEach(b => {
+        b.classList.remove('bg-forest', 'text-white');
+        b.classList.add('bg-canvas', 'text-muted');
+      });
+      button.classList.add('bg-forest', 'text-white');
+      button.classList.remove('bg-canvas', 'text-muted');
+
+      const data = weekData[num];
+      const card = document.getElementById('week-display-card');
+      
+      let breakdownHtml = data.breakdown.map(item => `
+        <div class="p-4 rounded-xl bg-canvas border border-warmborder">
+          <span class="text-xs font-bold text-terracotta uppercase tracking-wider block mb-1">${item.time}</span>
+          <p class="font-bold text-sm text-ink mb-1">${item.label}</p>
+          <p class="text-xs text-muted">${item.desc}</p>
+        </div>
+      `).join('');
+
+      card.innerHTML = `
+        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-4 border-b border-warmborder mb-5 gap-2">
+          <div>
+            <span class="text-xs font-bold text-terracotta uppercase tracking-wider">Progression Milestone</span>
+            <h3 class="font-serif font-bold text-2xl text-ink mt-0.5">${data.title}</h3>
+          </div>
+          <span class="text-xs font-semibold px-3 py-1 rounded-full bg-forest-light text-forest border border-warmborder self-start sm:self-auto">${data.subtitle}</span>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 mb-5">
+          ${breakdownHtml}
+        </div>
+        <div class="p-3.5 rounded-xl bg-paper border border-warmborder text-xs text-muted italic flex items-center gap-2">
+          <span class="font-semibold not-italic text-forest">Note:</span>
+          <span>${data.tip}</span>
+        </div>
+      `;
+    }
+    // Initialize with Week 1
+    selectWeek(1, document.querySelector('.week-tab'));
+
+    // 2. Audio Player Preview Simulation
+    let isPlaying = false;
+    let audioTimer = null;
+    let secondsElapsed = 0;
+    const transcriptCues = [
+      { sec: 0, text: '"Press play and start with a relaxing 3-minute warm-up walk..."' },
+      { sec: 5, text: '"Jog interval starts in 3... 2... 1. Keep it nice and light. Pretend you are stepping on eggshells."' },
+      { sec: 11, text: '"Drop your shoulders away from your ears. No clenched fists. You are doing fantastic."' },
+      { sec: 16, text: '"Walk recovery in 3... 2... 1. Walk tall and take a deep breath in through your nose."' }
+    ];
+
+    function toggleAudioPreview() {
+      isPlaying = !isPlaying;
+      const playIcon = document.getElementById('audio-play-icon');
+      const progressBar = document.getElementById('audio-progress');
+      const timerText = document.getElementById('audio-timer');
+      const transcript = document.getElementById('audio-transcript-text');
+
+      if (isPlaying) {
+        playIcon.innerHTML = '<path d="M6 19h4V5H6v14zm8-14v14h4V5h-4z"/>';
+        audioTimer = setInterval(() => {
+          secondsElapsed++;
+          let pct = (secondsElapsed / 20) * 100;
+          progressBar.style.width = pct + '%';
+          let secFormatted = secondsElapsed < 10 ? '0' + secondsElapsed : secondsElapsed;
+          timerText.innerText = '00:' + secFormatted;
+
+          let cue = [...transcriptCues].reverse().find(c => secondsElapsed >= c.sec);
+          if (cue) transcript.innerText = cue.text;
+
+          if (secondsElapsed >= 20) {
+            clearInterval(audioTimer);
+            isPlaying = false;
+            secondsElapsed = 0;
+            progressBar.style.width = '0%';
+            timerText.innerText = '00:00';
+            playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+            transcript.innerText = '"Press play and start with a relaxing 3-minute warm-up walk..."';
+          }
+        }, 1000);
+      } else {
+        clearInterval(audioTimer);
+        playIcon.innerHTML = '<path d="M8 5v14l11-7z"/>';
+      }
+    }
+
+    // 3. FAQ Accordion Toggle
+    function toggleFaq(button) {
+      const content = button.nextElementSibling;
+      const sign = button.querySelector('span:last-child');
+      const isHidden = content.classList.contains('hidden');
+
+      document.querySelectorAll('#faq .paper-card').forEach(card => {
+        const c = card.querySelector('div.px-5.pb-4');
+        const s = card.querySelector('button span:last-child');
+        if (c && c !== content) {
+          c.classList.add('hidden');
+          if (s) s.innerText = '+';
+        }
+      });
+
+      if (isHidden) {
+        content.classList.remove('hidden');
+        sign.innerText = '−';
+      } else {
+        content.classList.add('hidden');
+        sign.innerText = '+';
+      }
+    }
+
+    // 4. Form Submission and Confetti
+    function handleSignup(e, emailInputId, nameInputId = null) {
+      e.preventDefault();
+      const email = document.getElementById(emailInputId).value;
+      document.getElementById('confirmed-email').innerText = email;
+      document.getElementById('success-modal').classList.remove('hidden');
+
+      if (typeof confetti === 'function') {
+        confetti({
+          particleCount: 50,
+          spread: 60,
+          origin: { y: 0.6 }
+        });
+      }
+    }
+
+    function closeModal() {
+      document.getElementById('success-modal').classList.add('hidden');
+    }
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeModal();
+    });
+  </script>
+</body>
+</html>
